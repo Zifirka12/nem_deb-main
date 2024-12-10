@@ -118,3 +118,49 @@ alert('10');
             behavior: 'smooth' 
         });
     });
+
+    while (i < 2) {
+        i++; // Используем инкремент ++, 
+         // чтобы не писать полную конструкцию i = i + 1
+        console.log("Привет");
+    }
+
+    let i = 1;
+while (i < 7) {
+    if (i == 6){
+      break; // Прерываем выполнение цикла, если i = 3
+    }
+   console.log(i); // Выведет в консоль 1, 2, 3
+    i++;
+}
+
+for (let i = 7; i <= 22; i++) {
+    console.log(i);
+}
+
+
+const obj = {
+    "Коля": '200',
+    "Вася": '300',
+    "Петя": '400'
+    };
+
+    for (let key in obj) {
+        console.log(`${key}: ${obj[key]}`);}
+
+    x = 0;
+    num = 1000;
+    while (num>50) {
+        if(num>50){
+            num /= 2;
+            x++;
+        }
+        else{console.log(num); console.log(x)} // 25 и 4 
+    }
+
+    b = 0;
+    v = 31;
+    while(v<31){b+=5;
+        console.log("Сегодня пятница " + b +"-е число. Нужно подготовить отчет.");
+        b+=2;
+    }
