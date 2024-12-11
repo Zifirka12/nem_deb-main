@@ -119,17 +119,15 @@ alert('10');
         });
     });
 
+    i = 1; // первый минус был тут 
     while (i < 2) {
         i++; // Используем инкремент ++, 
          // чтобы не писать полную конструкцию i = i + 1
         console.log("Привет");
     }
 
-    let i = 1;
+    let i = 1; // второй минус исправлен
 while (i < 7) {
-    if (i == 6){
-      break; // Прерываем выполнение цикла, если i = 3
-    }
    console.log(i); // Выведет в консоль 1, 2, 3
     i++;
 }
@@ -148,19 +146,16 @@ const obj = {
     for (let key in obj) {
         console.log(`${key}: ${obj[key]}`);}
 
-    x = 0;
-    num = 1000;
-    while (num>50) {
-        if(num>50){
-            num /= 2;
-            x++;
+        let n = 1000; // 3 минус
+        let num11 = 0;
+        while (n >= 50) {
+            n /= 2;
+            num11++;
         }
-        else{console.log(num); console.log(x)} // 25 и 4 
-    }
+        console.log("Результат:", n);
+        console.log("Количество итераций:", num11);
 
-    b = 0;
-    v = 31;
-    while(b<31){b+5;
-        console.log("Сегодня пятница " + b +"-е число. Нужно подготовить отчет.");
-        b+2;
-    }
+        const f = 5; // 4 vbyec
+        for (let day = f; day <= 31; day += 7) {
+            console.log(`Сегодня пятница, ${day}-е число. Необходимо подготовить отчет.`);
+        }
