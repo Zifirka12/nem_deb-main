@@ -249,3 +249,27 @@ const obj = {
             console.log(`Площадь  круга: ${circle1.getArea().toFixed(2)}`);
             console.log(`Периметр  круга: ${circle1.getPerimeter().toFixed(2)}`);
             
+
+            const randomNumber = Math.floor(Math.random() * 100 + 1); //РАМНДОМ ИГРА
+        let guess;
+        let attempts = 0;
+
+        while (true) {
+        guess = parseInt(prompt("Попробуйте угадать число от 1 до 100:"));
+    
+        if (!guess || isNaN(guess)) {
+        alert("Введите корректное число!");
+        continue;
+        }
+
+        attempts++;
+
+        if (guess === randomNumber) {
+        alert(`Поздравляем! Вы угадали число за ${attempts} попыток.`);
+        break;
+        } else if (guess > randomNumber) {
+        alert("Загаданное число меньше.");
+        } else {
+        alert("Загаданное число больше.");
+        }
+        }
