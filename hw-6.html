@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Угадай число</title>
+</head>
+<body>
+<script>//Задача 7
+    const numbers = [9, 8, 7, 6, 5]; // Дан массив чисел
+
+    // Получаем ввод от пользователя
+    const userInput = prompt("Угадайте число:", "");
+    
+    // Преобразуем ввод в число
+    const guessedNumber = Number(userInput);
+
+    // Проверяем, содержится ли число в массиве
+    if (numbers.includes(guessedNumber)) {
+        alert("Угадал!");
+    } else {
+        alert("Не угадал.");
+    }
+</script>
+</body>
+</html>
