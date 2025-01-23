@@ -292,3 +292,39 @@ const obj = {
     } while (true);
         
     }
+
+        //Дз №8
+        function playerVersusPcGame() {
+            const randomItems = ["камень", "ножницы", "бумага"];
+            let playerAnswer; 
+            const getRandomItem = () => Math.floor(Math.random() * randomItems.length);
+            const computerChoice = randomItems[getRandomItem()];
+            switch (computerChoice) {
+                case 'камень':
+                    computerChoice === 'камень';
+                    break;
+                case 'ножницы':
+                    computerChoice === 'ножницы';
+                    break; 
+                default: computerChoice === 'бумага';
+                    break;
+            }
+            const regexp = /^[а-яА-Я]*$/;
+            do {
+                playerAnswer = prompt("Введите \"камень\", \"ножницы\" или \"бумага\"");
+                    if (regexp.test(playerAnswer)) {
+                        if (playerAnswer.toLowerCase() === computerChoice) {
+                            alert(`Выбор чата жпт: ${computerChoice}`);
+                            alert("Ничья!");
+                        } else if (playerAnswer.toLowerCase() !== computerChoice) {
+                            alert(`Выбор чата жпт: ${computerChoice}`);
+                            alert("Чат жпт победил");
+                        } else {
+                            alert(`Выбор чата жпт: ${computerChoice}`);
+                        }
+                    } else {
+                        alert("Не верно вел буква") 
+                    }
+                
+            } while (!regexp.test(playerAnswer));
+        }    
