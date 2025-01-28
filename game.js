@@ -155,4 +155,4 @@
                     }
                 
             } while (!regexp.test(playerAnswer));
-        }    
+        }   //провто коментарий  
