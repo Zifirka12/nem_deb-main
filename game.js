@@ -132,27 +132,29 @@
 
         //Дз №8
         function playerVersusPcGame() {
-            const randomItems = ["камень", "ножницы", "бумага"];
-            let playerAnswer; 
-            const getRandomItem = () => Math.floor(Math.random() * randomItems.length);
-            const computerChoice = randomItems[getRandomItem()];
-            const regexp = /^[а-яА-Я]*$/;
-            do {
-                playerAnswer = prompt("Введите \"камень\", \"ножницы\" или \"бумага\"");
-                    if (regexp.test(playerAnswer)) {
-                        if (playerAnswer.toLowerCase() === computerChoice) {
-                            alert(`Выбор чата жпт: ${computerChoice}`);
-                            alert("Ничья!");
-                        } else if (playerAnswer.toLowerCase() !== computerChoice) {
-                            alert(`Выбор чата жпт: ${computerChoice}`);
-                            alert("Чат жпт победил");
-                        } else {
-                            alert(`Выбор чата жпт: ${computerChoice}`);
-                            alert("Чат жпт проиграл");
-                        }
-                    } else {
-                        alert("Не верно вел буква") 
-                    }
-                
-            } while (!regexp.test(playerAnswer));
-        }   //провто коментарий  
+    const randomItems = ["камень", "ножницы", "бумага"];
+    let playerAnswer;
+    const getRandomItem = () => Math.floor(Math.random() * randomItems.length);
+    const computerChoice = randomItems[getRandomItem()];
+    const validOptions = new RegExp("^(?:камень|ножницы|бумага)$", "i"); // Проверка на валидность
+
+    do {
+        playerAnswer = prompt("Введите \"камень\", \"ножницы\" или \"бумага\":");
+        if (validOptions.test(playerAnswer)) {
+            playerAnswer = playerAnswer.toLowerCase(); // Приводим ответ к нижнему регистру
+            alert(`Выбор компьютера: ${computerChoice}`);
+
+            if (playerAnswer === computerChoice) {
+                alert("Ничья!");
+            } else if ((playerAnswer === "камень" && computerChoice === "ножницы") || 
+                       (playerAnswer === "ножницы" && computerChoice === "бумага") || 
+                       (playerAnswer === "бумага" && computerChoice === "камень")) {
+                alert("Вы победили!");
+            } else {
+                alert("Компьютер победил.");
+            }
+        } else {
+            alert("Некорректный ввод! Повторите попытку.");
+        }
+    } while (!validOptions.test(playerAnswer));
+}   //провто коментарий  
