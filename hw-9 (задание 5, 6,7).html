@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="title">Задание 5. Работа с querySelectorAll</h1>
+    <div class="items">
+        <p class="description">Lorem </p>
+        <p class="description">Lorem ipsum </p>
+        <p class="text">Lorem ipsum dolor sit </p>
+        <p class="description">Lorem dolor sit amet</p>
+        <p class="text">Lorem ipsum dolor, sit amet consectetur </p>
+        <p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing </p>
+        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+        <button class="btn">Нажмите меня</button>
+
+        <h3>Задание 6. Добавление нового элемента в DOM</h3>
+
+        <button class="btn-create">Добавить элемент</button>
+    </div>
+    <script>
+        const descriptionElClass = document.querySelectorAll('.description');
+        const btn = document.querySelector('.btn');
+
+
+        btn.addEventListener('click', () => {
+        descriptionElClass.forEach(element => {
+        element.textContent = 'Новый текст';
+        });
+    });
+    </script>
+    
+    <script>
+        
+        const btnCreate = document.querySelector('.btn-create');
+        const itemsEl = document.querySelector(".items");
+
+        
+
+        btnCreate.addEventListener('click', () => {
+        const textEl = document.createElement('p');
+        textEl.textContent = 'Новый абзац';
+        textEl.classList.add('text');
+
+        itemsEl.appendChild(textEl);
+
+        });
+    </script>
+
+<h2 class="title">Задание 7. Удаление элемента</h2>
+<p class="text">Lorem </p>
+<p class="description">2</p>
+<p class="text">Lorem ipsum </p>
+<p class="description">3</p>
+<p class="description">4</p>
+
+<button id="remove-btn">Удалить элемент</button>
+
+<script>
+    const removeBtn = document.querySelector('#remove-btn');
+    
+
+    removeBtn.addEventListener('click', function () {
+        const descriptionEl = document.querySelector('.description');
+        descriptionEl.firstChild.remove();
+    });
+</script>
+</body>
+</html>
