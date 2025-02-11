@@ -156,3 +156,13 @@
                 
             } while (!regexp.test(playerAnswer));
         }   //провто коментарий  
+
+        //Курсавая игра менять цвет фона 
+            const mainEl = document.querySelector('.main');
+            const btnEl = document.querySelector('#click_button');
+            btnEl.addEventListener('click', () => {
+                const r = Math.random() * 256;
+                const g = Math.random() * 256;
+                const b = Math.random() * 256;
+                mainEl.style.backgroundColor = `rgba(${r}, ${g}, ${b})`;
+            });
